@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b27"><title>Velvet North — Blackjack</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky"><div class="aurora a1"></div><div class="aurora a2"></div><div class="stars"></div><div class="mountains"></div></div>
+<header><div class="brand"><span class="brand-mark">✦</span><div><div class="brand-name">VELVET NORTH</div><div class="brand-sub">A QUIET NIGHT AT THE TABLE</div></div></div><div class="top-note">PRIVATE BLACKJACK ROOM <span>·</span> UP TO 12 PLAYERS</div></header>
+<main>
+<section id="lobby" class="panel lobby">
+  <div class="eyebrow">THE NIGHT IS YOURS</div><h1>Take a seat.<br><em>Let the cards fall.</em></h1>
+  <p class="intro">A calm, atmospheric blackjack table for friends, wherever they are.</p>
+  <div class="join-fields"><label>Your name<input id="playerName" maxlength="18" placeholder="Enter a table name" autocomplete="nickname"></label><label>Table code<input id="roomCode" maxlength="8" placeholder="Create or join a code" autocomplete="off"></label></div>
+  <button id="joinBtn" class="gold-btn">Enter the table <span>↗</span></button>
+  <div class="lobby-foot"><span>250,000 starting chips</span><span>Virtual chips only · No real money</span></div>
+</section>
+<section id="game" class="game hidden">
+  <div class="table-heading"><div><div class="eyebrow">PRIVATE TABLE</div><h2>Room <span id="roomLabel">—</span></h2></div><div class="round-label">ROUND <b id="roundNo">0</b></div></div>
+  <div class="felt">
+    <div class="table-glow"></div>
+    <div class="dealer-area"><div class="dealer-label">THE HOUSE <span>·</span> NO DEALER NEEDED</div><div id="dealerCards" class="cards"></div><div id="dealerTotal" class="hand-total"></div></div>
+    <div class="table-message" id="tableMessage">Waiting for players…</div>
+    <div class="players-grid" id="playersGrid"></div>
+  </div>
+  <div class="controls">
+    <div class="balance"><span>YOUR CHIPS</span><strong id="myBalance">250,000</strong></div>
+    <div class="bet-control"><label for="betAmount">YOUR BET</label><input id="betAmount" type="number" min="1" step="1" value="1000"><button id="betBtn" class="gold-btn">Place bet</button></div>
+    <div class="play-control"><button id="hitBtn" class="action-btn">Hit</button><button id="standBtn" class="action-btn">Stand</button><button id="doubleBtn" class="action-btn">Double</button><button id="nextBtn" class="gold-btn">Next round</button></div>
+  </div>
+  <div class="table-bottom"><span id="playerCount">0 / 12 seats</span><span>Blackjack pays 3:2 · Dealer stands on 17 · Six-deck shoe</span><button id="copyRoom" class="text-btn">Copy room code</button></div>
+</section>
+<div id="notice" class="notice hidden"></div>
+</main>
+<footer>VELVET NORTH <span>—</span> PLAY AT YOUR OWN PACE</footer>
+<script src="/socket.io/socket.io.js"></script><script src="game.js"></script>
+</body></html>
